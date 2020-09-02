@@ -1,14 +1,25 @@
 ﻿using System;
-
+using System.Collections;
+using System.Text;
+using System.Collections.Generic;
+using System.Runtime;
 namespace ConsoleCalculator
 {
     public class Calculator
     {
-
-        public string SendKeyPress(char key)
+        public StringBuilder DisplayString;
+        
+        
+        public Calculator()
         {
-            // Add your implementation here.
-            throw new NotImplementedException();
+            DisplayString = new StringBuilder();
+            
+        }
+    
+        public bool SendKeyPress(char key)
+        {
+           
+            return true;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace ConsoleCalculator.App
             while (IsKillSwitch(key = Console.ReadKey(true)) == false)
             {
                 Console.Clear();
-                Console.WriteLine(calc.SendKeyPress(key.KeyChar));
+                calc.SendKeyPress(key.KeyChar); 
             }
         }
 
