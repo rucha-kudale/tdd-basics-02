@@ -215,5 +215,60 @@ namespace ConsoleCalculator.Tests
             calc.SendKeyPress('=');
             Assert.Equal("8", calc.DisplayString.ToString());
         }
+
+        [Fact]
+        public void TestMultipleAddition()
+        {
+            calc.SendKeyPress('1');
+            calc.SendKeyPress('+');
+            calc.SendKeyPress('2');
+            calc.SendKeyPress('+');
+            calc.SendKeyPress('4');
+            calc.SendKeyPress('+');
+            Assert.Equal("7", calc.DisplayString.ToString());
+        }
+
+        [Fact]
+        public void TestPlusAssignmentOperator()
+        {
+            calc.SendKeyPress('1');
+            calc.SendKeyPress('+');
+            calc.SendKeyPress('2');
+            calc.SendKeyPress('+');
+            calc.SendKeyPress('3');
+            calc.SendKeyPress('+');
+            calc.SendKeyPress('=');
+            Assert.Equal("12", calc.DisplayString.ToString());
+        }
+
+        [Fact]
+        public void TestMinusAssignmentOperator()
+        {
+            calc.SendKeyPress('7');
+            calc.SendKeyPress('-');
+            calc.SendKeyPress('=');           
+            Assert.Equal("0", calc.DisplayString.ToString());
+        }
+
+        [Fact]
+        public void TestMutlipleMinusAssignmentOperator()
+        {
+            calc.SendKeyPress('7');
+            calc.SendKeyPress('-');
+            calc.SendKeyPress('1');
+            calc.SendKeyPress('-');
+            calc.SendKeyPress('=');
+            Assert.Equal("0", calc.DisplayString.ToString());
+        }
+        [Fact]
+        public void TestMultiplicationAssignmentOperator()
+        {
+            calc.SendKeyPress('2');
+            calc.SendKeyPress('x');
+            calc.SendKeyPress('2');
+            calc.SendKeyPress('x');
+            calc.SendKeyPress('=');
+            Assert.Equal("16", calc.DisplayString.ToString());
+        }
     }
 }

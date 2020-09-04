@@ -9,6 +9,7 @@ namespace ConsoleCalculator.App
             var calc = new Calculator();
             ConsoleKeyInfo key;
             Console.WriteLine("Press Ctrl + C to close the program.");
+            Console.TreatControlCAsInput = true;
             while (IsKillSwitch(key = Console.ReadKey(true)) == false)
             {
                 Console.Clear();
@@ -18,7 +19,7 @@ namespace ConsoleCalculator.App
 
         private static bool IsKillSwitch(ConsoleKeyInfo key)
         {
-            return key.Key == ConsoleKey.C && key.Modifiers == ConsoleModifiers.Control;
+            return key.Key == ConsoleKey.C && key.Modifiers == ConsoleModifiers.Control;          
         }
     }
 }
